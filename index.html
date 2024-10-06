@@ -1,0 +1,211 @@
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPJNDDQT84"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-YPJNDDQT84');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/storage/css/index.css">
+        <title>Home | Phantom</title>
+
+        <meta name="description" content="a free games site hosting 500+ games and a proxy unblocker that helps you bypass firewalls and access your favorite sites from school or work">
+        <meta property="og:site_name" content="phantom">
+        <meta property="og:title" content="phantom">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="a free games site hosting 500+ games and a proxy unblocker that helps you bypass firewalls and access your favorite sites from school or work">
+  </head>
+  <body>
+    
+     <div id="blackout"></div>
+     <div id="updPopup">
+        <img src="/images/other/v1.jpg" style="width: 90%;">
+        <br><br>
+        <h2 style="font-size: 28px;">Introducing Phantom</h2>
+
+        <div id="updContent">
+            <ul style="text-align: left;">
+                <li>500+ games: no embedding, no workarounds - games ranging from unity to flash to emulators and more!</li>
+                                <br>
+                <li>10+ apps: a dedicated area hosting apps, ranging from useful utilities to fun web engine showcases</li>
+                                <br>
+                <li>offline mode
+                  <ul>
+                    <li>download 200+ games from the site by clicking the download button to the left of them</li>
+                    <li>after one game is downloaded, loading the site without an internet connection will send you to an offline version on the site where you can access downloaded games</li>
+                    <li>supports ruffle/flash + works seamlessly with compatible games</li>
+                  </ul>
+                </li>
+
+                <br>
+                <li>personalisation: 10 custom curated themes with unique backgrounds and colour schemes + a highly expansive custom theme editor complete with importing/exporting of themes</li>
+                                <br>
+                <li>settings: cloaking tab, panic key customisations, import/export data, clear site data & open games in new tabs</li>
+                                <br>
+                <li>mobile: an exclusive page dedicated to mobile users, featuring mobile games and the same functional experience as normal phantom</li>
+              </ul>        
+        </div>
+        <div id="updConfirmFrame"><button id="updConfirm">okay</button></div>
+      </div>
+
+      
+      <div class="content-side">
+          <h1 class="typewriter"><span id="cursor"></span></h1>
+          <h2>version 1 / launch edition</h2>
+          <br>
+
+          <div class="button-container">
+              <div class="gamesbutton" onclick="window.location='games/index.html';">
+                  <img src="images/other/controller.png">
+                  <div class="button-text">
+                      <p>games</p>
+                  </div>
+              </div>
+          
+              <div class="gamesbutton" onclick="window.location='apps/index.html';">
+                  <img src="images/other/apps.png">
+                  <div class="button-text">
+                      <p>apps</p>
+                  </div>
+              </div>
+              
+              <div class="gamesbutton" onclick="window.location='proxy.html';">
+                <img src="images/other/proxy.png">
+                <div class="button-text">
+                    <p>proxy</p>
+                </div>
+            </div>
+              
+          </div>
+                    <br>
+
+          <div class="button-container">
+               <div class="gamesbutton" onclick="window.location='chat.html';">
+                  <img src="images/other/chat.png">
+                  <div class="button-text">
+                      <p>chat</p>
+                  </div>
+              </div>
+              <div class="gamesbutton" onclick="window.location='settings.html';">
+                <img src="images/other/settings.png">
+                <div class="button-text">
+                    <p>settings</p>
+                </div>
+            </div>
+              </div>
+          
+
+          <br>
+
+          <p class="linkp"><a href="/spirit/index.html">mobile</a> • <a href="host.html">rehost</a> • <a id="openBlankLink">open blank</a> • <a href="https://discord.gg/9dFx9kKQS6" target="_blank">discord</a>  </p>
+          
+          <br>
+          <a href="https://quenq.com" target="_blank" style="text-decoration: none;">˗ˏˋ❀ powered by quenq.com ❀ ´ˎ˗</a>
+        
+      </div>
+
+      <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/offline-worker.js').then(function(registration) {
+                    console.log('service worker initalised! scope:', registration.scope);
+        
+                    navigator.serviceWorker.addEventListener('message', function(event) {
+                        if (event.data === 'cached') {
+                            document.getElementById('cache-status').style.display = 'block';
+                        }
+                    });
+                }, function(error) {
+                    console.log('ack, error with serviceworker! ', error);
+                });
+            });
+        }
+
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!localStorage.getItem('v1')) {
+                document.getElementById('blackout').style.display = 'block';
+                document.getElementById('updPopup').style.display = 'block';
+                localStorage.setItem('v1', 'true');
+            }
+            document.getElementById('updConfirm').addEventListener('click', function () {
+                document.getElementById('blackout').style.display = 'none';
+                document.getElementById('updPopup').style.display = 'none';
+            });
+        });
+      </script>
+      <script>
+        const text = "phantom";
+        const typingDelay = 500; 
+        const initialDelay = 100; 
+        const cursor = document.getElementById("cursor");
+        const h1 = document.querySelector(".typewriter");
+
+        function type() {
+            setTimeout(() => {
+                for (let i = 0; i < text.length; i++) {
+                setTimeout(() => {
+                    h1.textContent += text[i];
+                    if (i === text.length - 1) {
+                    cursor.style.display = "none"; 
+                    }
+                }, i * typingDelay);
+                }
+            }, initialDelay);
+        }
+
+        type();
+      </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var openBlankLink = document.getElementById('openBlankLink');
+        
+            openBlankLink.addEventListener('click', function(event) {
+                event.preventDefault();
+        
+                var newTab = window.open('about:blank', '_blank');
+        
+                if (newTab) {
+                    var newTabBody = newTab.document.body;
+                    newTabBody.style.padding = '0';
+                    newTabBody.style.margin = '0';
+                    newTabBody.style.border = 'hidden';
+        
+                    var iframe = document.createElement('iframe');
+                    iframe.src = window.location.href;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.border = 'hidden';
+
+                    iframe.onload = function() {
+                        var links = iframe.contentDocument.querySelectorAll('a[target="_blank"]');
+                        links.forEach(function(link) {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                iframe.contentWindow.location.href = link.href;
+                            });
+                        });
+                    };
+        
+                    newTab.document.body.appendChild(iframe);
+                } else {
+                    alert("couldn't manage to open a new tab :(");
+                }
+            });
+        });
+        </script>    
+
+      <script src="storage/js/cloak.js"></script>
+      <script src="storage/js/theme.js"></script>
+      <script src="storage/js/cookie.js"></script>
+  </body>
+</html>
